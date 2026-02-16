@@ -19,6 +19,7 @@ webpki-roots = { version = "1", optional = true }
 
 [features]
 default = ["rustls-tls", "ring"]
+async-native-tls = []
 
 rustls-tls = [
     "dep:tokio-rustls",
