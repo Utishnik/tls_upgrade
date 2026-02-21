@@ -11,6 +11,8 @@ path = "src/lib.rs"
 #async
 async-native-tls = "0.5.0"
 tokio-rustls = { version = "0.26", optional = true }
+tokio = {version = "1.49.0", features = ["net"]}
+futures-io = "0.3.32"
 
 native-tls = { version = "0.2.9", optional = true }
 rustls = { version = "0.23.18", default-features = false, features = ["logging", "std", "tls12"], optional = true }
@@ -18,7 +20,8 @@ rustls-pki-types = { version = "1", optional = true }
 webpki-roots = { version = "1", optional = true }      
 
 [features]
-default = ["rustls-tls", "ring"]
+tokio = []
+default = ["rustls-tls", "ring", "tokio"]
 async-native-tls = []
 
 rustls-tls = [
